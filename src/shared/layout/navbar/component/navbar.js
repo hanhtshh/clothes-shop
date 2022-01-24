@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import image from '../../../image/attachment_32447660.png';
 export default function NavbarComponent(props){
     return <>
     <div className="navbar">
         <div className='navbar__image-block'> 
-        <img src="https://images-platform.99static.com/C7mXtSeLZgYJqL8yo68fTaknBUQ=/500x500/top/smart/99designs-contests-attachments/32/32447/attachment_32447660" className='navbar__image'></img>
+        <img src={image} className='navbar__image'></img>
         </div>
         <div className='navbar__category'>
             <ul className='navbar__category-list'>
@@ -20,7 +21,7 @@ export default function NavbarComponent(props){
                 <li className='navbar__category-list-categoryname'>SẢN PHẨM</li>
                 <li className='navbar__category-list-categoryname'>PHỤ KIỆN</li> */}
                 {props.category.map(item=>{
-                    return <Link to={"/"+item.name} className='navbar__category-list-categoryname'>{item.name}</Link>
+                    return <Link key={item._id} to={"/home/"+item.name} className='navbar__category-list-categoryname'>{item.name}</Link>
                 })}
             </ul>
         </div>
@@ -34,6 +35,7 @@ export default function NavbarComponent(props){
         </div>
         
     </div>
+    {/* <Link to='/SALE'><img src='https://storage.googleapis.com/cdn.nhanh.vn/store/2071/bn/Sale_P2_Web_a.jpg'  className='navbar__image2'/></Link> */}
     <div className='navbarmobile'>
         <button className='navbarmobile__button'>
             <i class="fas fa-home navbarmobile__icon"></i>

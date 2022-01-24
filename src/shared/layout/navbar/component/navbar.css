@@ -4,6 +4,10 @@
     background: black;
     display: inline-flex;
 }
+.navbar__frame{
+    display: flex;
+    flex-wrap: wrap;
+}
 .navbar__image-block{
     height: 100%;
     width: 300px;
@@ -19,8 +23,8 @@
 .navbar__category{
     position: absolute;
     left: 350px;
-    bottom: -30px;
-    height: 100%;
+    top:15px;
+    height: 80px;
     width: 60%;
 
 }
@@ -38,12 +42,15 @@
     cursor: pointer;
     text-decoration: none;
 }
+.navbar__category-list-categoryname:focus{
+    color: red;
+}
 .navbar__category-list-categoryname:hover{
     color: red;
 }
 .navbar__search{
     position: absolute;
-    top:60px;
+    top:50px;
     right: 90px;
     width: 240px;
     height: 40px;
@@ -73,10 +80,12 @@
 }
 .navbar__category-icon{
     position: absolute;
+    top:50px;
     right: 20px;
     font-size: 30px;
     color: white;
     display: none;
+    cursor: pointer;
 }
 .navbarmobile{
     position: fixed;
@@ -101,6 +110,10 @@
 .navbarmobile__icon{
     font-size: 30px;
     color: white;
+}
+.navbar__image2{
+    width: 100%;
+    cursor: pointer;
 }
 @media (max-width:739px){
     .navbar__category{
@@ -137,6 +150,7 @@
     }
     .navbar__category{
         left: 250px;
+        height: 110px;
     }
     .navbar__search{
         right: 40px;
