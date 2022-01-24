@@ -1,0 +1,41 @@
+
+.blur {
+  position: fixed;
+  background: rgb(3, 3, 3,0.6); 
+  display: flex;
+  justify-content: center;
+  height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+.input{
+  margin: 8px;
+  height: 40px;
+  width: 550px;
+  border-radius: 15px;
+  border: 0.5px solid #e3e3e3;
+  padding-left: 20px;
+}
+.input:focus{
+  outline: 0;
+  border: 0.5px solid black;
+}
+.button{
+  margin: 8px;
+  height: 40px;
+  width: 550px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.link{
+  font-size: 14px;
+  font-weight: 500;
+  color: #184ddd;
+  cursor: pointer;
+}
+#root{
+  display: flex;
+  flex-wrap: wrap;
+}

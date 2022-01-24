@@ -1,0 +1,30 @@
+.header__info{
+    display: block;
+    color: #878080;
+    margin-left: 20px;
+    padding-top: 5px;
+}
+.header__link{
+    margin: 10px;
+    text-decoration: none;
+    color: #878080;
+    cursor: pointer;
+}
+.header__service{
+    position: absolute;
+    right: 20px;
+    padding-top: 5px;
+}
+.header__link:hover{
+    color: black;
+}
+.header{
+    display: flex;
+    height: 35px;
+
+}
+@media (max-width:740px){
+    .header{
+        display: none;
+    }
+}

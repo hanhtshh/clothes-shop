@@ -1,0 +1,44 @@
+@keyframes login{
+    0%{
+        top:1000px;
+    }
+    100%{
+        top:0px;
+    }
+}
+.login__form{
+    text-align: center;
+    position: fixed;
+    margin-top: 180px;
+    width: 600px;
+    border: none;
+    background: white;
+    border-radius: 15px;
+    animation-name:login;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+}
+.login__form-info{
+    position: absolute;
+    top:70px;
+    margin: 10px;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
+}
+.login__form-header{
+    font-weight: bold;
+    margin-top: 30px;
+}
+.login__form-exit{
+    position: absolute;
+    right: 15px;
+    top:5px;
+    cursor: pointer;
+}
+.login__form-imagegg{
+    position: relative;
+    top:3.5px;
+    height: 18px;
+    width: 18px;
+}

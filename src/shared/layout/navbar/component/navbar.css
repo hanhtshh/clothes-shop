@@ -1,0 +1,144 @@
+.navbar{
+    height: 80px;
+    width: 100%;
+    background: black;
+    display: inline-flex;
+}
+.navbar__image-block{
+    height: 100%;
+    width: 300px;
+    overflow: hidden;
+}
+.navbar__image{
+    position: relative;
+    bottom: 120px;
+    height: 300px;
+    background: #ffffff;
+    color: white;
+}
+.navbar__category{
+    position: absolute;
+    left: 350px;
+    bottom: -30px;
+    height: 100%;
+    width: 60%;
+
+}
+.navbar__category-list{
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+}
+.navbar__category-list-categoryname{
+    font-style: oblique;
+    font-weight: 500;
+    color: white;
+    margin:10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.navbar__category-list-categoryname:hover{
+    color: red;
+}
+.navbar__search{
+    position: absolute;
+    top:60px;
+    right: 90px;
+    width: 240px;
+    height: 40px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.navbar__search-input{
+    position: absolute;
+    left: 15px;
+    top:2px;
+    height: 35px;
+    border: none;
+}
+.navbar__search-button{
+    position: absolute;
+    right: 5px;
+    border: none;
+    outline: none;
+    background: white;
+    font-size: 25px;
+    bottom: 4px;
+    cursor: pointer;
+}
+.navbar__search-input:focus{
+    outline: 0;
+}
+.navbar__category-icon{
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    display: none;
+}
+.navbarmobile{
+    position: fixed;
+    bottom: 0px;
+    height: 80px;
+    width: 100%;
+    background: black;
+    display: none;
+}
+.navbarmobile__button{
+    margin-top: 5px;
+    height: 70px;
+    width: 20%;
+    font-size: 16;
+    font-weight: bold;
+    color: white;
+    outline: none;
+    background: black;
+    border: none;
+    margin-left: 4%;
+}
+.navbarmobile__icon{
+    font-size: 30px;
+    color: white;
+}
+@media (max-width:739px){
+    .navbar__category{
+        display: none;
+        
+    }
+    .navbar__search{
+        display: none;
+    }
+    .navbarmobile{
+        display: block;
+    }
+}
+@media (max-width:1024px) and (min-width:740px){
+    .navbar__category{
+        display: none;
+        
+    }
+    .navbar__search{
+        display: none;
+    }
+    .navbar__category-icon{
+        display: block;
+    }
+    .navbar{
+        height: 80px;
+    }
+
+}
+@media (max-width:1800px) and (min-width:1025px){
+    .navbar{
+
+        height: 110px;
+    }
+    .navbar__category{
+        left: 250px;
+    }
+    .navbar__search{
+        right: 40px;
+    }
+}

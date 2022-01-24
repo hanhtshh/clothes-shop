@@ -1,0 +1,19 @@
+@keyframes cart{
+    0%{right: -500px;}
+    100%{right:0px}
+}
+.cart{
+    right: 0px;
+    width: 500px;
+    position: fixed;
+    background: white;
+    height: 100%;
+    animation-name:cart;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+}
+.cart__close{
+    color: red;
+    float: right;
+    cursor: pointer;
+}
