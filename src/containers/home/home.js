@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import HomeComponent from "./component/home";
 export default function HomeContainer(props){
-    const [categoryList,setCategoryList]=useState([]);
+    const [categoryList,setCategoryList]=useState([0]);
     const [listItem,setListItem]=useState([]);
     useEffect(()=>{
         axios.get('/category')
@@ -20,6 +20,6 @@ export default function HomeContainer(props){
         })
     },[])
     return <>
-        <HomeComponent categoryList={categoryList} listItem={listItem}/>
+        {listItem.length>0 && <HomeComponent categoryList={categoryList} listItem={listItem}/>}
     </>
 }

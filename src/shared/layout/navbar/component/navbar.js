@@ -6,20 +6,10 @@ export default function NavbarComponent(props){
     return <>
     <div className="navbar">
         <div className='navbar__image-block'> 
-        <img src={image} className='navbar__image'></img>
+        <Link to='/'><img src={image} className='navbar__image'></img></Link>
         </div>
         <div className='navbar__category'>
             <ul className='navbar__category-list'>
-                {/* <li className='navbar__category-list-categoryname'>SALE</li>
-                <li className='navbar__category-list-categoryname'>COLLECTION</li>
-                <li className='navbar__category-list-categoryname'>ÁO KHOÁC 2 LỚP</li>
-                <li className='navbar__category-list-categoryname'>ĐỒ NỈ</li>
-                <li className='navbar__category-list-categoryname'>ÁO KHOÁC DÀY</li>
-                <li className='navbar__category-list-categoryname'>SƠ MI-QUẦN DÀI</li>
-                <li className='navbar__category-list-categoryname'>ÁO LEN</li>
-                <li className='navbar__category-list-categoryname'>ÁO POLO</li>
-                <li className='navbar__category-list-categoryname'>SẢN PHẨM</li>
-                <li className='navbar__category-list-categoryname'>PHỤ KIỆN</li> */}
                 {props.category.map(item=>{
                     return <Link key={item._id} to={"/home/"+item.name} className='navbar__category-list-categoryname'>{item.name}</Link>
                 })}

@@ -20,6 +20,24 @@ const it={
         address: "",
         telephone: "",
         admin:-1
+    },
+    item:{
+        _id:"",
+        name:"",
+        image:[""],
+        describes:"",
+        price:0,
+        sale:0,
+        size:[{
+            name:"",
+            quantity:0,
+            _id:""
+        }],
+        category:{
+            _id:"",
+            name:"",
+            image:""
+        }
     }
 }
 export const store = createStore(pReducer,it);

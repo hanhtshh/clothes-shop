@@ -17,6 +17,21 @@ export function reducer(state, action) {
           }
        }
     }
+    else if (action.type=='postitem'){
+       return{
+          ...state,
+          item:{
+             _id:action._id,
+             name:action.name,
+             image:action.image,
+             describes:action.describes,
+             price:action.price,
+             sale:action.sale,
+             size:action.size,
+             category:action.category
+          }
+       }
+    }
     else{
        return state;
     }

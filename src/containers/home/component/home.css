@@ -43,7 +43,15 @@
 .home__listcategory-category:focus{
     color: #b22b29;
 }
-@media (max-width:1024px){
+@media (max-width:1024px) and (min-width:741px){
+    .home__iconbox{
+        width: 50%;
+    }
+}
+@media (max-width:740px){
+    .home__listcategory-category{
+        margin: 15px;
+    }
     .home__iconbox{
         width: 50%;
     }
