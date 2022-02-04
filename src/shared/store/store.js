@@ -38,7 +38,8 @@ const it={
             name:"",
             image:""
         }
-    }
+    },
+    cart:[]
 }
 export const store = createStore(pReducer,it);
 export const persistor = persistStore(store);

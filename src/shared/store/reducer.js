@@ -32,6 +32,20 @@ export function reducer(state, action) {
           }
        }
     }
+    else if (action.type=='themvaogiohang'){
+       console.log(state)
+       const a=state.cart.filter(item=>item.item._id==action.item._id);
+       if(a.length==0){
+         return{
+            ...state,cart:[...state.cart,{item:action.item,number:action.number}]
+         }
+       }
+       else{
+          return{
+             ...state,cart:state.cart.filter(item=>item.item._id!=action.item._id)+[{...a[0],number:a[0].number+action.number}]
+          }
+       }
+    }
     else{
        return state;
     }

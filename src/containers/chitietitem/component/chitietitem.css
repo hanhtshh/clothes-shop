@@ -24,6 +24,14 @@
     border: 0.5px solid #ddd;
     margin: 5px;
     cursor: pointer;
+    transition: 0.3s;
+}
+.chitietitem__body-listimage-image.choose{
+    border: 0.5px solid black;
+    width: 50px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
 }
 .chitietitem__body-col{
     margin-top: 30px;
@@ -49,9 +57,179 @@
     margin: 15px;
     width: auto;
 }
+.chitietitem__body-info-sizetext{
+    font-size: 12px;
+    text-decoration:underline;
+    color: gray;
+    cursor: pointer;
+}
+.chitietitem__showsize{
+    position: fixed;
+    height: 900px;
+    width: 900px;
+    background: white;
+    text-align: center;
+    left: 25%;
+    top: -1200px;
+    transition: 0.5s;
+}
+.chitietitem__showsize.show{
+    position: fixed;
+    text-align: center;
+    height: 900px;
+    width: 900px;
+    background: white;
+    left: 25%;
+    top: 60px;
+}
+.chitietitem__showsize-image{
+    height: 791px;
+}
+.chitietitem__showsize-header{
+    position: relative;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+    background: #e6e6e6;
+}
+.fas.fa-times{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
 .chitietitem__body-info-price{
     height: 30px;
     border-top: 0.5px solid #dfe0e1;
+    display: flex;
+    position: relative;
+}
+.size{
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sizebox{
+    margin-right:10px;
+    height: 40px;
+    width: 40px;
+    border: 0.5px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 2px;
+}
+.sizebox.choose{
+    border: 0.5px solid black;
+}
+.number{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+}
+.number__number{
+    width:70px;
+    height: 40px;
+    border: 0.5px solid #e5e5e5;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.number__tru{
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid #e5e5e5;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.number__cong{
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid #e5e5e5;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.chitietitem__body-info-button{
+    width: 180px;
+    height: 40px;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.chitietitem__describes{
+    width: 100%;
+    position: relative;
+    height: 45px;
+    border-bottom: 0.5px solid #dfe0e1;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.chitietitem__describes.show{
+    width: 100%;
+    height: 70px;
+    transition: 0.5s;
+}
+.chitietitem__describes-header{
+    font-size: 12px;
+    font-weight: bold;
+    color: #4a4d4e;
+}
+.chitietitem__body-info-buttondiv{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.chitietitem__describes-header-icon{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    width: 20px;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    background: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.chitietitem__describes-body{
+    min-height: 30px;
+}
+.chitietitem__gioithieu{
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.chitietitem__gioithieu-image{
+    height: 20px;
+    width: 20px;
+}
+.chitietitem__gioithieu-header{
+    margin-left: 10px;
+    font-weight:bold;
+    font-size:14px;
+    color: #4a4d4e;
+}
+.chitietitem__gioithieu-body{
+    font-weight: lighter;
 }
 @media (max-width:1300px) and (min-width:740px){
     .chitietitem__body-image{
@@ -72,6 +250,9 @@
         margin: 0;
     }
     .chitietitem__body-listimage{
+        display: none;
+    }
+    .chitietitem__body-info{
         display: none;
     }
 }

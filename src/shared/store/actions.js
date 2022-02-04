@@ -28,3 +28,10 @@ export function postitem(u){
         category:u.category
     }
 }
+export function themvaogiohang(u){
+    return{
+        type:'themvaogiohang',
+        item:u.item,
+        number:u.number
+    }
+}

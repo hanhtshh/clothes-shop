@@ -9,8 +9,8 @@
     align-items: center;
     justify-content: center;
     z-index: -1;
-    transition: 0.4s;
-    transform:scale(0.5);
+    transition: 0.2s;
+    transform:scale(0.6);
 }
 .imageshow__exit{
     position: absolute;
@@ -35,9 +35,6 @@
     color: white;
     font-size: 30px;
     cursor: pointer;
-}
-.chitietitem__body-image-show:active .imageshow__image{
-    transform:scale(0.2);
 }
 .imageshow__image{
     transition:0.5s;
