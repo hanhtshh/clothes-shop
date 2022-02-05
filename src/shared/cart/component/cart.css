@@ -13,7 +13,20 @@
     animation-timing-function: ease;
 }
 .cart__close{
-    color: red;
-    float: right;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
+}
+.cart__body{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.cart__body-p{
+    border-bottom:1px dotted rgb(175, 175, 175);
+    padding-bottom: 15px;
 }

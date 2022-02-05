@@ -3,6 +3,12 @@ import CartComponent from "./component/cart";
 
 export default function CartContainer(props){
     const cart=useSelector(state=>state.cart);
-    console.log(cart);
-    return <CartComponent setDisplayCart={props.setDisplayCart}/>
+    const tongtien=()=>{
+        let tong=0
+        for(var i in cart){
+            tong+=cart[i].item.price*cart[i].number;
+        }
+        return tong;
+    }
+    return <CartComponent tongtien={tongtien} cart={cart} setDisplayCart={props.setDisplayCart}/>
 }

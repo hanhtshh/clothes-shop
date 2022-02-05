@@ -33,16 +33,16 @@ export function reducer(state, action) {
        }
     }
     else if (action.type=='themvaogiohang'){
-       console.log(state)
-       const a=state.cart.filter(item=>item.item._id==action.item._id);
-       if(a.length==0){
-         return{
-            ...state,cart:[...state.cart,{item:action.item,number:action.number}]
-         }
+       let a=state.cart.filter(item=>item.item._id!=action.item._id);
+       if(a.length==state.cart.length){
+          return {
+             ...state,cart:[...state.cart,{item:action.item,number:action.number}]
+          }
        }
        else{
-          return{
-             ...state,cart:state.cart.filter(item=>item.item._id!=action.item._id)+[{...a[0],number:a[0].number+action.number}]
+          let b=state.cart.filter(item=>item.item._id==action.item._id);
+          return {
+             ...state,cart:[...a,{item:action.item,number:b[0].number+action.number}]
           }
        }
     }
