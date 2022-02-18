@@ -9,7 +9,7 @@ export default function BodyComponent(props){
     return <body className="body">
             <Switch>
                 <Route path='/item'>
-                    <ChitietitemContainer/>
+                    <ChitietitemContainer setDisplayCart={props.setDisplayCart}/>
                 </Route>
                 <Route path='*'>
                     <HomeContainer/>

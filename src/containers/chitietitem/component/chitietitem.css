@@ -24,7 +24,6 @@
     border: 0.5px solid #ddd;
     margin: 5px;
     cursor: pointer;
-    transition: 0.3s;
 }
 .chitietitem__body-listimage-image.choose{
     border: 0.5px solid black;
@@ -69,7 +68,7 @@
     width: 900px;
     background: white;
     text-align: center;
-    left: 25%;
+    margin: 0 auto;
     top: -1200px;
     transition: 0.5s;
 }
@@ -79,8 +78,8 @@
     height: 900px;
     width: 900px;
     background: white;
-    left: 25%;
-    top: 60px;
+    margin: auto;
+    top: 5%;
 }
 .chitietitem__showsize-image{
     height: 791px;

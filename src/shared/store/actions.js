@@ -32,6 +32,14 @@ export function themvaogiohang(u){
     return{
         type:'themvaogiohang',
         item:u.item,
-        number:u.number
+        number:u.number,
+        size:u.size
+    }
+}
+export function xoagiohang(u){
+    return{
+        type:'xoagiohang',
+        size:u.size,
+        item_id:u._id
     }
 }

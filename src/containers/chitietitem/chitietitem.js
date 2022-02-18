@@ -58,7 +58,7 @@ export default function ChitietitemContainer(props) {
     setHuongdan(huongdan ? false : true);
   };
   const themvaogio =()=>{
-    dispatch(themvaogiohang({item,number}));
+    dispatch(themvaogiohang({item:item,number:number,size:item.size[sizeIndex].name}));
   }
   return (
     <>
@@ -86,6 +86,7 @@ export default function ChitietitemContainer(props) {
         setIndex={chooseImage}
         imageshow={imageshow}
         themvaogio={themvaogio}
+        setDisplayCart={props.setDisplayCart}
       />
     </>
   );

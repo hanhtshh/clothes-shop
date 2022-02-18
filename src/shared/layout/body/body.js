@@ -3,6 +3,6 @@ import BodyComponent from "./component/body";
 
 export default function BodyContainer(props){
     return <>
-        <BodyComponent/>
+        <BodyComponent setDisplayCart={props.setDisplayCart}/>
     </>
 }

@@ -33,20 +33,26 @@ export function reducer(state, action) {
        }
     }
     else if (action.type=='themvaogiohang'){
-       let a=state.cart.filter(item=>item.item._id!=action.item._id);
+       let a=state.cart.filter(item=>(item.item._id!=action.item._id || item.size!=action.size));
        if(a.length==state.cart.length){
           return {
-             ...state,cart:[...state.cart,{item:action.item,number:action.number}]
+             ...state,cart:[...state.cart,{item:action.item,number:action.number,size:action.size}]
           }
        }
        else{
-          let b=state.cart.filter(item=>item.item._id==action.item._id);
+          let b=state.cart.filter(item=>(item.item._id==action.item._id && item.size==action.size));
           return {
-             ...state,cart:[...a,{item:action.item,number:b[0].number+action.number}]
+             ...state,cart:[...a,{item:action.item,number:b[0].number+action.number,size:action.size}]
           }
        }
     }
-    else{
-       return state;
+    
+    else if(action.type=='xoagiohang'){
+       return {
+          ...state,cart:state.cart.filter(item=>(item.item._id!=action.item_id && item.size!=action.size))
+       }
     }
+    else{
+      return state;
+   }
  }

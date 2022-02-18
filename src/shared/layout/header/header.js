@@ -10,18 +10,9 @@ import Header3Component from "./component/header3";
 
 export default function HeaderContainer(props){
     const dispatch=useDispatch();
-    const [displayCart,setDisplayCart]=useState(false);
     const [displayLogin,setDisplayLogin]=useState(false);
     const [displaySignup,setDisplaySignup]=useState(false);
     const user=useSelector(state=>state.user);
-    const cart=()=>{
-        if(displayCart==true){
-            setDisplayCart(false);
-        }
-        else{
-            setDisplayCart(true);
-        }
-    }
     const login=()=>{
         if(displayLogin==true){
             setDisplayLogin(false);
@@ -57,17 +48,17 @@ export default function HeaderContainer(props){
     }
     if(user.admin==-1){
         return <>
-        <Header1Component displayCart={displayCart} setDisplayCart={cart} displayLogin={displayLogin} setDisplayLogin={login} displaySignup={displaySignup} setDisplaySignup={signup}/>
+        <Header1Component displayCart={props.displayCart} setDisplayCart={props.setDisplayCart} displayLogin={displayLogin} setDisplayLogin={login} displaySignup={displaySignup} setDisplaySignup={signup}/>
     </>
     }
     else if(user.admin==0){
         return <>
-       <Header2Component displayCart={displayCart} setDisplayCart={cart} user={user} logout={logout}/>
+       <Header2Component displayCart={props.displayCart} setDisplayCart={props.setDisplayCart} user={user} logout={logout}/>
         </>
     }
     else{
         return<>
-            <Header3Component displayCart={displayCart} setDisplayCart={cart} user={user} logout={logout}/>
+            <Header3Component displayCart={props.displayCart} setDisplayCart={props.setDisplayCart} user={user} logout={logout}/>
         </>
     }
 }

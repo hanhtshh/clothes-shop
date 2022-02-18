@@ -5,6 +5,10 @@ export default function ChitietitemComponent(props) {
     props.click(item.target.src);
     props.setIndex(item.target.id);
   };
+  const themsanpham=(item)=>{
+    props.themvaogio();
+    props.setDisplayCart();
+  }
   return (
     <>
       <div className="chitietitem__headding">
@@ -125,7 +129,7 @@ export default function ChitietitemComponent(props) {
             </div>
           </div>
           <div className="chitietitem__body-info-buttondiv">
-            <button className="chitietitem__body-info-button" onClick={props.themvaogio}>
+            <button className="chitietitem__body-info-button" onClick={themsanpham}>
               THÊM VÀO GIỎ HÀNG
             </button>
             <button className="chitietitem__body-info-button">MUA NGAY</button>
