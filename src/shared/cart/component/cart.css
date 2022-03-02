@@ -85,4 +85,9 @@
     background: black;
     color: white;
     cursor: pointer;
+    text-decoration: none;
+}
+.cart__button-chitet{
+    color: black;
+    margin-top: 30px;
 }

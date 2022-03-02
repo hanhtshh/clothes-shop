@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router,Route, Switch } from "react-router-dom";
+import CartCheckoutContainer from "../../../../containers/cartcheckout/cartcheckout";
+import CartshowContainer from "../../../../containers/cartshow/cartshow";
 import ChitietitemContainer from "../../../../containers/chitietitem/chitietitem";
 import HomeContainer from "../../../../containers/home/home";
-import ItemShowContainer from "../../../../containers/itemshow/itemshow";
-import LoginContainer from "../../../../containers/login/login";
 import './body.css';
 export default function BodyComponent(props){
     return <body className="body">
@@ -11,6 +11,12 @@ export default function BodyComponent(props){
                 <Route path='/item'>
                     <ChitietitemContainer setDisplayCart={props.setDisplayCart}/>
                 </Route>
+                <Route path='/cart/checkout'>
+                    <CartCheckoutContainer/>
+                </Route>
+                <Route path='/cart'>
+                <CartshowContainer/>
+            </Route>
                 <Route path='*'>
                     <HomeContainer/>
                 </Route>

@@ -13,7 +13,7 @@ export default function CartContainer(props){
         return tong;
     }
     const xoasanpham=(item)=>{
-        dispatch(xoagiohang({item_id:cart[item.target.id].item._id,size:cart[item.target.id].size}));
+        dispatch(xoagiohang({_id:cart[item.target.id].item._id,size:cart[item.target.id].size}));
     }
     return <CartComponent tongtien={tongtien} cart={cart} xoasanpham={xoasanpham} setDisplayCart={props.setDisplayCart}/>
 }

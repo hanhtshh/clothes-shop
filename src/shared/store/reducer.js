@@ -49,7 +49,7 @@ export function reducer(state, action) {
     
     else if(action.type=='xoagiohang'){
        return {
-          ...state,cart:state.cart.filter(item=>(item.item._id!=action.item_id && item.size!=action.size))
+          ...state,cart:state.cart.filter(item=>(item.item._id!=action.item_id || item.size!=action.size))
        }
     }
     else{

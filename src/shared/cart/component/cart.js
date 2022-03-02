@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './cart.css';
 export default function CartComponent(props){
     return <div className='blur'>
@@ -27,9 +28,14 @@ export default function CartComponent(props){
             }
             <p className='cart__body-price'>TỔNG TIỀN TẠM TÍNH:<span className='cart__body-price-number'>{props.tongtien().toString()
                 .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}₫</span></p>
-                <button className='cart__button-thanhtoan' >
+                <Link to="/cart/checkout">
+                <button className='cart__button-thanhtoan' onClick={props.setDisplayCart}>
                 TIẾN HÀNH ĐẶT HÀNG
             </button>
+                </Link>
+                <Link to="/cart" style={{textDecoration:"none",textAlign:"center"}}>
+                    <p className='cart__button-chitet' onClick={props.setDisplayCart}>Xem chi tiết giỏ hàng <i class="fa-solid fa-arrow-right"></i></p>
+                </Link>
         </div>
         
     </div>

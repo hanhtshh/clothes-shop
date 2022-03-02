@@ -148,6 +148,9 @@
 
         height: 110px;
     }
+    .navbar__category-list{
+        width: 700px;
+    }
     .navbar__category{
         left: 250px;
         height: 110px;
