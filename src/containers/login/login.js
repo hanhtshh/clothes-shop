@@ -26,6 +26,7 @@ export default function LoginContainer(props){
         axios.post('https://clothesnodejs-production.up.railway.app/customer/login',user,{withCredentials:true})
         .then(item=>item.data)
         .then(item=>{
+            localStorage.setItem('token',item.token);
             dispatch(kiemtrauser(item.data));
             props.setDisplayLogin();
         })

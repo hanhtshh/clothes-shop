@@ -32,6 +32,7 @@ export default function HeaderContainer(props){
     const logout=()=>{
         axios.get('https://clothesnodejs-production.up.railway.app/customer/logout')
         .then(item=>{
+            localStorage.removeItem('token');
             alert('Đăng xuất tài khoản thành công');
             dispatch(kiemtrauser({
                 name:"",
