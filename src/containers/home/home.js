@@ -5,12 +5,12 @@ export default function HomeContainer(props){
     const [categoryList,setCategoryList]=useState([0]);
     const [listItem,setListItem]=useState([]);
     useEffect(()=>{
-        axios.get('/category')
+        axios.get('https://clothesnodejs-production.up.railway.app/category')
         .then(item=>item.data)
         .then(item=>{
             setCategoryList(item);
         })
-        axios.get('/item')
+        axios.get('https://clothesnodejs-production.up.railway.app/item')
         .then(item=>item.data)
         .then(item=>{
             setListItem(item);

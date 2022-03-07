@@ -7,7 +7,7 @@ export default function NavbarContainer(props){
     const [searchKey,setSearchKey]=useState("");
     const dispatch=useDispatch();
     useEffect(()=>{
-        fetch('/category')
+        fetch('https://clothesnodejs-production.up.railway.app/category')
         .then(item=>item.json())
         .then(item=>{
             setCategory(item);

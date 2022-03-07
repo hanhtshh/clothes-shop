@@ -23,7 +23,7 @@ export default function LoginContainer(props){
         setUser({...user,password:item.target.value});
     }
     const login=()=>{
-        axios.post('/customer/login',user)
+        axios.post('https://clothesnodejs-production.up.railway.app/customer/login',user,{withCredentials:true})
         .then(item=>item.data)
         .then(item=>{
             dispatch(kiemtrauser(item.data));

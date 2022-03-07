@@ -29,7 +29,7 @@ export default function SignupContainer(props){
     }
     const signup=()=>{
         if(user.username!='' && user.password!='' && user.nhaplaipassword!='' && user.nhaplaipassword==user.password){
-            axios.post('/customer',{
+            axios.post('https://clothesnodejs-production.up.railway.app/customer',{
                 username:user.username,
                 password:user.password,
                 name:user.name

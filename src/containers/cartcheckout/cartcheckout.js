@@ -38,7 +38,7 @@ export default function CartCheckoutContainer(props){
         }
         else{
             const date=new Date();
-            axios.post('/oder',{
+            axios.post('https://clothesnodejs-production.up.railway.app/oder',{
                 telephone:telephone,
                 address:address,
                 cost:tongtien(),
@@ -52,7 +52,7 @@ export default function CartCheckoutContainer(props){
                 })
             })
             .then(item=>{
-                axios.patch('/customer/handleInformation',{
+                axios.patch('https://clothesnodejs-production.up.railway.app/customer/handleInformation',{
                     name:name,
                     address:address,
                     telephone:telephone,

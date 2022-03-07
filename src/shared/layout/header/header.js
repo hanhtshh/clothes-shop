@@ -30,7 +30,7 @@ export default function HeaderContainer(props){
         }
     }
     const logout=()=>{
-        axios.get('/customer/logout')
+        axios.get('https://clothesnodejs-production.up.railway.app/customer/logout')
         .then(item=>{
             alert('Đăng xuất tài khoản thành công');
             dispatch(kiemtrauser({
