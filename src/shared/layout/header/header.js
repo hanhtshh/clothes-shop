@@ -40,11 +40,12 @@ export default function HeaderContainer(props){
                 admin:-1,
                 address:""
             }))
-           
+            window.location="/";
         })
         .catch(item=>{
             alert('Có lỗi');
         })
+       
     }
     if(user.admin==-1){
         return <>
