@@ -33,7 +33,7 @@ export default function SignupContainer(props){
                 username:user.username,
                 password:user.password,
                 name:user.name
-            })
+            },{withCredentials:true})
             .then(item=>{
                 alert('Đăng ký tài khoản thành công, vui lòng đăng nhập để mua hàng');
                 chuyendoi();

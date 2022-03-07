@@ -50,14 +50,14 @@ export default function CartCheckoutContainer(props){
                         size:item.size
                     }
                 })
-            })
+            },{withCredentials:true})
             .then(item=>{
                 axios.patch('https://clothesnodejs-production.up.railway.app/customer/handleInformation',{
                     name:name,
                     address:address,
                     telephone:telephone,
                     email:email
-                })
+                },{withCredentials:true})
                 .then(e=>{
                     setSuccess(true);
                     dispatch(refreshcart({
