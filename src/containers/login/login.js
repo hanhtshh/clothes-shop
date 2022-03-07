@@ -23,7 +23,7 @@ export default function LoginContainer(props){
         setUser({...user,password:item.target.value});
     }
     const login=()=>{
-        axios.post('https://clothesnodejs-production.up.railway.app/customer/login',user,{withCredentials:true})
+        axios.post('https://clothesnodejs-production.up.railway.app/customer/login',user)
         .then(item=>item.data)
         .then(item=>{
             localStorage.setItem('token',item.token);
