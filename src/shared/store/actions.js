@@ -43,3 +43,12 @@ export function xoagiohang(u){
         item_id:u._id
     }
 }
+export function refreshcart(u){
+    return{
+        type:'refreshcart',
+        name:u.name,
+        email:u.email,
+        telephone:u.telephone,
+        address:u.address
+    }
+}

@@ -1,3 +1,11 @@
+@keyframes sizeshow{
+    0%{
+        top:-1000px;
+    }
+    100%{
+        top:0px;
+    }
+}
 .cartckeckout{
     margin: 35px;
     font-family: Arial, Helvetica, sans-serif;
@@ -130,4 +138,32 @@ input{
     max-height: 450px;
     overflow: auto;
 
+}
+.cartcheckout__successshow{
+    animation-name: sizeshow;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    height: 350px;
+    background: white;
+    border-radius: 4px;
+    text-align: center;
+    position: fixed;
+    margin-top: 100px;
+    width: 600px;
+
+}
+.fa-solid.fa-circle-check{
+    font-size: 65px;
+    color: #18bd5c;
+    margin-top: 30px;
+}
+.cartcheckout__suceesshow-button{
+    height: 40px;
+    width: 240px;
+    background: #18bd5c;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

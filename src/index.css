@@ -1,5 +1,6 @@
 .blur {
   top: 0;
+  left: 0;
   position: fixed;
   background: rgb(3, 3, 3,0.6); 
   display: flex;

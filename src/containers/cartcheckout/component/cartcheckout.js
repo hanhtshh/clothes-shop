@@ -53,9 +53,32 @@ export default function CartCheckoutComponent(props){
             <div className="cartcheckout__cart-ship">
                 Tổng cộng <p className="cartcheckout__cart-shipprice"><b>{props.tongtien().toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}₫</b></p> 
             </div>
-            <div className="cartchekout__cart-buttonthanhtoan">
+            <div className="cartchekout__cart-buttonthanhtoan" onClick={props.dathang}>
                 HOÀN TẤT ĐƠN HÀNG
             </div>
         </div>
+        {props.success?<div className="blur">
+            <div className="cartcheckout__successshow">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>Thành công!</h3>
+            <p>Bạn đã đặt hàng thành công, vui lòng quay lại trang chủ để tiếp tục mua sắm</p>
+            <p>Đơn hàng sẽ được gửi đi trong thời gian sớm nhất, xin cảm ơn!</p>
+            <br/>
+                <button className="cartcheckout__suceesshow-button" onClick={props.redirect}>
+                    Quay về trang chủ
+                </button>
+            </div>
+        </div>:<></>}
+        {props.fall?<div className="blur">
+            <div className="cartcheckout__successshow">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>Đặt hàng thất bại!</h3>
+            <p>Vui lòng kiểm tra lại thông tin đơn hàng</p>
+            <br/>
+                <button className="cartcheckout__suceesshow-button" onClick={props.setFall}>
+                    Quay về trang chủ
+                </button>
+            </div>
+        </div>:<></>}
     </div>
 }

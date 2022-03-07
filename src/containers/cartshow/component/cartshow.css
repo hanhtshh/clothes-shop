@@ -1,3 +1,4 @@
+
 .cartshow{
     text-decoration: none;
     color: black;
@@ -118,6 +119,7 @@
 .cartshow__body-item-price{
     margin-left: 70px;
 }
+
 @media (max-width:1024px) and (min-width:741px){
     .cartshow__body-action{
         margin-left: 5px;

@@ -1,9 +1,14 @@
 import CartCheckoutComponent from "./component/cartcheckout";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 import { useState } from "react";
+import { refreshcart } from "../../shared/store/actions";
 export default function CartCheckoutContainer(props){
+    const dispatch=useDispatch();
     const user=useSelector(state=>state.user);
     const cart=useSelector(state=>state.cart);
+    const [success,setSuccess]=useState(false);
+    const [fall,setFall]=useState(false);
     const [name,setName]=useState(user.name);
     const [email,setEmail]=useState(user.email);
     const [telephone,setTelephone]=useState(user.telephone);
@@ -27,5 +32,53 @@ export default function CartCheckoutContainer(props){
         }
         return tong;
     }
-    return <CartCheckoutComponent tongtien={tongtien} handleAddress={handleAddress} address={address} handleTelephone={handleTelephone} telephone={telephone} handleEmail={handleEmail} email={email} handleName={handleName} name={name} user={user} cart={cart}/>
+    const dathang=()=>{
+        if(user.admin==-1){
+            alert("Bạn cần phải đăng nhập để thanh toán!");
+        }
+        else{
+            const date=new Date();
+            axios.post('/oder',{
+                telephone:telephone,
+                address:address,
+                cost:tongtien(),
+                oder_date:date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear(),
+                oder_list:cart.map(item=>{
+                    return {
+                        item:item.item._id,
+                        quantity:item.number,
+                        size:item.size
+                    }
+                })
+            })
+            .then(item=>{
+                axios.patch('/customer/handleInformation',{
+                    name:name,
+                    address:address,
+                    telephone:telephone,
+                    email:email
+                })
+                .then(e=>{
+                    setSuccess(true);
+                    dispatch(refreshcart({
+                        name:name,
+                        address:address,
+                        telephone:telephone,
+                        email:email
+                    }));
+                    
+                })
+            })
+            .catch(item=>{
+                setFall(true);
+            })
+        }
+    }
+    const redirect=()=>{
+        window.location="/";
+    }
+    const displayFall=()=>{
+        setFall(false);
+    }
+    return <CartCheckoutComponent fall={fall} setFall={displayFall} redirect={redirect} success={success} dathang={dathang} tongtien={tongtien} handleAddress={handleAddress} address={address} handleTelephone={handleTelephone} telephone={telephone} handleEmail={handleEmail} email={email} handleName={handleName} name={name} user={user} cart={cart}/>
 }

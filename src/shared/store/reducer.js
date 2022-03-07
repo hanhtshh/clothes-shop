@@ -52,6 +52,17 @@ export function reducer(state, action) {
           ...state,cart:state.cart.filter(item=>(item.item._id!=action.item_id || item.size!=action.size))
        }
     }
+    else if(action.type=='refreshcart'){
+       return{
+          ...state,cart:[],user:{
+             ...state.user,
+             name:action.name,
+             address:action.address,
+             email:action.email,
+             telephone:action.telephone
+          }
+       }
+    }
     else{
       return state;
    }
