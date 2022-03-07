@@ -25,7 +25,7 @@ module.exports = {
     rules: [
       // rules for modules (configure loaders, parser options, etc.)
       {
-        test: /\.jsx?$/,
+        test: /.jsx?$/,
         include: [
           path.resolve(__dirname, "./app")
         ],
@@ -38,11 +38,11 @@ module.exports = {
         // see webpack 1 upgrade guide
       },
       {
-        test: /\.css$/,
+        test: /.css$/,
         use: [ 'style-loader', 'css-loader' ]
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
+        test: /.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
         loader: 'url-loader',
         options: {
           limit: 10000
@@ -52,6 +52,7 @@ module.exports = {
   },
 
   devServer: {
-    compress: true
+    compress: true,
+    public:"https://bookapppy.herokuapp.com/"
   }
 }
