@@ -20,6 +20,19 @@
     font-style: unset;
     font-family: Arial, Helvetica, sans-serif;
 }
+.itemShow_createItemButton{
+    height: 445px;
+    width: 295px;
+    margin: 15px;
+    background: rgb(212, 212, 212);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-solid.fa-plus{
+    font-size: 150px;
+}
 @media (max-width:740px){
     .itemshow__itembox{
         width: 50%;

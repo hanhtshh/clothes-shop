@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useState } from "react";
 import { refreshcart } from "../../shared/store/actions";
+import { useHistory } from "react-router-dom";
 export default function CartCheckoutContainer(props){
     const dispatch=useDispatch();
+    const history=useHistory
     const user=useSelector(state=>state.user);
     const cart=useSelector(state=>state.cart);
     const [success,setSuccess]=useState(false);
@@ -50,6 +52,10 @@ export default function CartCheckoutContainer(props){
                         size:item.size
                     }
                 })
+            },{
+                headers:{
+                    Authorization:localStorage.getItem("token")
+                }
             })
             .then(item=>{
                 axios.patch('https://clothesnodejs-production.up.railway.app/customer/handleInformation',{
@@ -57,6 +63,10 @@ export default function CartCheckoutContainer(props){
                     address:address,
                     telephone:telephone,
                     email:email
+                },{
+                    headers:{
+                        Authorization:localStorage.getItem("token")
+                    }
                 })
                 .then(e=>{
                     setSuccess(true);
@@ -75,7 +85,7 @@ export default function CartCheckoutContainer(props){
         }
     }
     const redirect=()=>{
-        window.location="/";
+       history.push("/");
     }
     const displayFall=()=>{
         setFall(false);

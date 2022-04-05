@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import ItemShowComponent from "./component/itemshow";
 export default function ItemShowContainer(props){   
     const [items,setItems]=useState([]);
+    const [addItem,setAddItem]=useState(false);
+    const user=useSelector(state=>state.user);
     useEffect(()=>{
         setItems(props.listItem.filter(item=>item.category.name==props.category));
-        console.log(props);
     },[props.category]);
     return <>
-        <ItemShowComponent items={items}/>
+        <ItemShowComponent addItem={addItem} setAddItem={setAddItem} user={user} items={items}/>
     </>
 }
