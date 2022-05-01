@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { xoagiohang } from "../../shared/store/actions";
 import CartshowComponent from "./component/cartshow";
@@ -5,13 +6,13 @@ import CartshowComponent from "./component/cartshow";
 export default function CartshowContainer(props){
     const cart=useSelector(state=>state.cart);
     const dispatch=useDispatch();
-    let tongtien=()=>{
-        let tong=0;
+    let tongtien=0;
+    useMemo(()=>{
+        tongtien=0;
         for(let i of cart){
-            tong+= i.item.sale*i.number;
+            tongtien+= i.item.sale*i.number;
         }
-        return tong;
-    }
+    },[cart])
     const deleteitem=(item)=>{
         dispatch(xoagiohang({
             size:cart[item.target.id].size,

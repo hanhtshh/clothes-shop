@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { SERVER } from "../../../util";
 import { kiemtrauser } from "../../store/actions";
 import Header1Component from "./component/header1";
 import Header2Component from "./component/header2";
@@ -30,7 +31,7 @@ export default function HeaderContainer(props){
         }
     }
     const logout=()=>{
-        axios.get('https://clothesnodejs-production.up.railway.app/customer/logout')
+        axios.get(SERVER+'/customer/logout')
         .then(item=>{
             localStorage.removeItem('token');
             alert('Đăng xuất tài khoản thành công');

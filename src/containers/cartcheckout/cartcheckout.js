@@ -4,9 +4,10 @@ import axios from "axios";
 import { useState } from "react";
 import { refreshcart } from "../../shared/store/actions";
 import { useHistory } from "react-router-dom";
+import { SERVER } from "../../util";
 export default function CartCheckoutContainer(props){
     const dispatch=useDispatch();
-    const history=useHistory
+    const history=useHistory();
     const user=useSelector(state=>state.user);
     const cart=useSelector(state=>state.cart);
     const [success,setSuccess]=useState(false);
@@ -40,11 +41,11 @@ export default function CartCheckoutContainer(props){
         }
         else{
             const date=new Date();
-            axios.post('https://clothesnodejs-production.up.railway.app/oder',{
+            axios.post(SERVER+'/oder',{
                 telephone:telephone,
                 address:address,
                 cost:tongtien(),
-                oder_date:date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear(),
+                oder_date:(date.getDay()+1)+"/"+(date.getMonth()+1)+"/"+date.getFullYear(),
                 oder_list:cart.map(item=>{
                     return {
                         item:item.item._id,
@@ -58,7 +59,7 @@ export default function CartCheckoutContainer(props){
                 }
             })
             .then(item=>{
-                axios.patch('https://clothesnodejs-production.up.railway.app/customer/handleInformation',{
+                axios.patch(SERVER+'/customer/handleInformation',{
                     name:name,
                     address:address,
                     telephone:telephone,

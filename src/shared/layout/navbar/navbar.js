@@ -2,12 +2,13 @@ import NavbarComponent from "./component/navbar";
 import React,{ useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { timkiem } from "../../store/actions";
+import { SERVER } from "../../../util";
 export default function NavbarContainer(props){
     const [category,setCategory]=useState([]);
     const [searchKey,setSearchKey]=useState("");
     const dispatch=useDispatch();
     useEffect(()=>{
-        fetch('https://clothesnodejs-production.up.railway.app/category')
+        fetch(SERVER+'/category')
         .then(item=>item.json())
         .then(item=>{
             setCategory(item);

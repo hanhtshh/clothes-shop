@@ -1,16 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { SERVER } from "../../util";
 import HomeComponent from "./component/home";
 export default function HomeContainer(props){
     const [categoryList,setCategoryList]=useState([0]);
     const [listItem,setListItem]=useState([]);
     useEffect(()=>{
-        axios.get('https://clothesnodejs-production.up.railway.app/category')
+        axios.get(SERVER+'/category')
         .then(item=>item.data)
         .then(item=>{
             setCategoryList(item);
         })
-        axios.get('https://clothesnodejs-production.up.railway.app/item')
+        axios.get(SERVER+'/item')
         .then(item=>item.data)
         .then(item=>{
             setListItem(item);

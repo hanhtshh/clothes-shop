@@ -10,6 +10,8 @@ export default function Header2Component(props){
             <span className="header__link">Mua hàng: <span  style={{color:"#ff0000",fontSize:"13px",fontWeight:500}}>0966835110</span></span>
         </div>
         <div className='header__service'>
+            <Link to='/quan-ly-don-hang' className="header__link">Quản lý đơn hàng <i class="fa-solid fa-list"></i></Link>
+            <span>{" "}|{" "}</span>
             <span className="header__link" onClick={props.setDisplayCart}>Giỏ hàng <i class="fab fa-opencart"></i></span>
             <span>{" "}|{" "}</span>
             <span className="header__link" >{props.user.name}</span>

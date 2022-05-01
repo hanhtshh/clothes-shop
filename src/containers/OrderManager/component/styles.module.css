@@ -1,0 +1,88 @@
+.orderManager {
+  width: 95vw;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px 0;
+}
+.userInfo {
+  width: 35%;
+  border-right: 1px solid #e2e2e2;
+  padding: 10px;
+}
+.orderList {
+  flex: 1;
+  padding: 10px;
+}
+.infoBox {
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+}
+.infoBox_p {
+  margin-left: 10px;
+}
+.orderBox {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 1px solid #d9d9d9;
+}
+.orderBox_footer {
+  padding-bottom: 40px;
+  background-color: #d9d9d9;
+  border-radius: 16px;
+  position: relative;
+}
+.orderBox_body {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.orderBox_header {
+  background: black;
+  color: white;
+  border-radius: 16px;
+  padding: 1px 20px;
+}
+.itemBox {
+  display: flex;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 10px 20px;
+}
+.imageBox {
+  height: 100px;
+  width: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.itemDescribes {
+  padding: 5px;
+}
+.image {
+  object-fit: cover;
+  width: 80px;
+}
+.itemName {
+  margin: 0;
+  font-size: 17px;
+}
+.itemNumber {
+  margin: 8px 0px;
+}
+.itemPrice {
+  font-weight: bold;
+  margin: 0;
+}
+.orderButton {
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+  outline: none;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+}

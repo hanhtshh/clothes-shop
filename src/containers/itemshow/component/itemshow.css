@@ -21,20 +21,55 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .itemShow_createItemButton{
-    height: 445px;
-    width: 295px;
-    margin: 15px;
+    width: 25%;
+    
+    box-sizing: border-box;
+    
+    padding: 15px 15px 150px 15px;
+}
+.fa-solid.fa-plus{
+    font-size: 150px;
+}
+.itemShow_childElement{
     background: rgb(212, 212, 212);
+    width: 100%;
+    height: 100%;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.fa-solid.fa-plus{
-    font-size: 150px;
+/* @keyframes heart{
+    0%{
+        transform: rotate(0)
+    }
+    25%{
+        transform: rotate(25deg) translateY(10px) scale(0.7)
+    }
+    50%{
+        transform: rotate(-25deg) scale(200%) 
+    }
+   75%{
+    transform:translateY(-5px) scale(150%) rotate(25deg) translateX(5px)
+   }
+    100%{
+       
+        transform: rotate(0) 
+    }
 }
+.iconheart{
+    cursor: pointer;
+    height: 5px;
+    color: brown;
+}
+.iconheart:hover{
+    animation: heart 1.2s linear;
+} */
 @media (max-width:740px){
     .itemshow__itembox{
+        width: 50%;
+    }
+    .itemShow_createItemButton{
         width: 50%;
     }
 }

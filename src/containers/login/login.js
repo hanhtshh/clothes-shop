@@ -3,6 +3,7 @@ import React,{useState} from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { kiemtrauser } from "../../shared/store/actions";
+import { SERVER } from "../../util";
 export default function LoginContainer(props){
     const dispatch=useDispatch();
     const [user,setUser]=useState({
@@ -23,7 +24,7 @@ export default function LoginContainer(props){
         setUser({...user,password:item.target.value});
     }
     const login=()=>{
-        axios.post('https://clothesnodejs-production.up.railway.app/customer/login',user)
+        axios.post(SERVER+'/customer/login',user)
         .then(item=>item.data)
         .then(item=>{
             localStorage.setItem('token',item.token);

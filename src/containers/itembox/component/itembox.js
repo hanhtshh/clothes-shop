@@ -3,7 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import './itembox.css';
 export default function ItemboxComponent(props){
     return <div className="itemshow__itembox">
-    <Link to='/item'><img src={props.image} className="itemshow__itembox-image" onClick={props.post}/></Link>
+    {props.user.admin!=1?<Link to='/item'><img src={props.image} className="itemshow__itembox-image" onClick={props.post}/></Link>:<div><img src={props.image} className="itemshow__itembox-image" onClick={props.post}/></div>}
     <p className="itemshow__itembox-name">{props.item.name}</p>
     <div className="itembox__imagelist">
     {

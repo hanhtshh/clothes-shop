@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { SERVER } from "../../util";
 import SignupComponent from "./component/signup";
 export default function SignupContainer(props){
     const [user,setUser]= useState({
@@ -29,7 +30,7 @@ export default function SignupContainer(props){
     }
     const signup=()=>{
         if(user.username!='' && user.password!='' && user.nhaplaipassword!='' && user.nhaplaipassword==user.password){
-            axios.post('https://clothesnodejs-production.up.railway.app/customer',{
+            axios.post(SERVER+'/customer',{
                 username:user.username,
                 password:user.password,
                 name:user.name

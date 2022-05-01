@@ -10,8 +10,13 @@ export default function ItemboxContainer(props){
     }
     const post=()=>{
         dispatch(postitem(props.item));
+        if(props.user.admin==1){
+            props.setHandle("handle");
+            props.setAddItem(true);
+        }
+      
     }   
     return<>
-        <ItemboxComponent image={image} click={click} item={props.item} post={post}/>
+        <ItemboxComponent user={props.user} image={image} click={click} item={props.item} post={post}/>
     </>
 };
