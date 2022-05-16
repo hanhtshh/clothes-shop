@@ -63,6 +63,13 @@ function OrderManagerComponent(props) {
                             }>
                                 hủy
                             </button>
+                            {props.user.admin==1?<button className={styles.orderButton2} onClick={
+                                function(){
+                                    props.succesOder(order._id);
+                                }
+                            }>
+                                hoàn thành
+                            </button>:<></>}
                         </div>
 
                     </div>

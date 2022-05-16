@@ -86,3 +86,17 @@
   height: 30px;
   width: 50px;
 }
+.orderButton2{
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  right: 90px;
+  bottom: 5px;
+  outline: none;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+  width: 90px;
+}

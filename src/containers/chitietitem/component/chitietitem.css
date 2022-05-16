@@ -14,8 +14,6 @@
 }
 .chitietitem__body-listimage{
 
-    display: flex;
-    flex-wrap: wrap;
     width: 50px;
 }
 .chitietitem__body-listimage-image{
@@ -38,13 +36,11 @@
     width: 65%;
 }
 .chitietitem__body-col-set{
-    position: absolute;
-    right: 0px;
+    margin-left: 30px;
     display: flex;
 }
 .chitietitem__body-image{
     width: 675px;
-    height: 500px;
     margin: 5px 30px 30px 30px;
     
 }

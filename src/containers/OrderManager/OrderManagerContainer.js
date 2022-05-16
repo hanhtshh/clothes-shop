@@ -38,7 +38,7 @@ function OrderManagerContainer(props) {
     }, [user])
     const deleteOrder=(_id)=>{
         if(user.admin==1){
-            axios.delete(SERVER+'/oder/admindelete/'+_id,{
+            axios.delete(SERVER+'/oder/admindeleteFailed/'+_id,{
                 headers:{
                     Authorization:localStorage.getItem('token')
                 }
@@ -64,8 +64,23 @@ function OrderManagerContainer(props) {
             })
         }
     }
+    const succesOder=(_id)=>{
+        if(user.admin==1){
+            axios.delete(SERVER+'/oder/admindelete/'+_id,{
+                headers:{
+                    Authorization:localStorage.getItem('token')
+                }
+            })
+            .then(()=>{
+                setOrderList(orderList=>orderList.filter(order=>order._id!=_id));
+            })
+            .catch(()=>{
+                alert('Xóa đơn hàng thất bại, vui lòng thử lại sau!');
+            })
+        }
+    }
     return (
-        <OrderManagerComponent deleteOrder={deleteOrder} user={user} orderList={orderList} />
+        <OrderManagerComponent succesOder={succesOder} deleteOrder={deleteOrder} user={user} orderList={orderList} />
     )
 }
 
