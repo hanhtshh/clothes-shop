@@ -3,13 +3,14 @@
         top:1000px;
     }
     100%{
-        top:0px;
+        top:0;
     }
 }
 .login__form{
     text-align: center;
     position: fixed;
-    margin-top: 10px;
+    margin-top: 50vh;
+    transform: translateY(-50%);
     width: 600px;
     border: none;
     background: white;

@@ -48,6 +48,9 @@ function OrderManagerComponent(props) {
                                                 <p className={styles.itemNumber}>
                                                     x {item.quantity}
                                                 </p>
+                                                <p className={styles.itemNumber}>
+                                                    size: {item.size}
+                                                </p>
                                                 <p className={styles.itemPrice}>
                                                     Giá: {item.item.sale.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}₫
                                                 </p>
