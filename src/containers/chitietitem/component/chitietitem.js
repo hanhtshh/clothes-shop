@@ -229,7 +229,7 @@ export default function ChitietitemComponent(props) {
             </header>
             <img
               className="chitietitem__showsize-image"
-              src="https://storage.googleapis.com/cdn.nhanh.vn/website/template/483/contentKey/4961/sizechuan.png"
+              src="https://theme.hstatic.net/200000690725/1001046816/14/tagsize_4_img.jpg?v=58"
             />
           </div>
         </div>

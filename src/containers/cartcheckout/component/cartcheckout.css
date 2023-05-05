@@ -121,8 +121,11 @@ input{
     margin:35px ;
     border-top:0.5px dotted gray ;
 }
+.cartcheckout__cart{
+    flex: 1;
+}
 .cartchekout__cart-buttonthanhtoan{
-    width: 85%;
+
     height: 40px;
     color: white;
     border: none;
@@ -137,7 +140,6 @@ input{
 .cartcheckout__cart-listitem{
     max-height: 450px;
     overflow: auto;
-
 }
 .cartcheckout__successshow{
     animation-name: sizeshow;

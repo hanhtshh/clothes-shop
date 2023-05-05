@@ -21,6 +21,7 @@
 .header{
     display: flex;
     height: 35px;
+    margin-top: 5px;
 
 }
 @media (max-width:740px){

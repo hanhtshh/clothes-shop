@@ -28,7 +28,7 @@ function OrderManagerComponent(props) {
                                 <div className={styles.orderBox_header}>
                                     <p>ID: {order._id}</p>
                                     <p>Ngày đặt: {order.oder_date}</p>
-                                    <p>Tên người nhận: {order.customer.name ? order.customer.name : props.user.name}</p>
+                                    <p>Tên người nhận: {order?.customer?.name ? order.customer.name : props.user.name}</p>
                                     <p>SĐT: {order.telephone}</p>
                                     <p>Địa chỉ: {order.address}</p>
                                 </div>
@@ -36,12 +36,12 @@ function OrderManagerComponent(props) {
                                     order.oder_list.map(item => {
                                         return <div className={styles.itemBox}>
                                             <div className={styles.imageBox}>
-                                                <img className={styles.image} src={item.item.image[0]} />
+                                                <img className={styles.image} src={item?.item?.image?.[0]} />
                                             </div>
                                             <div className={styles.itemDescribes}>
                                                 <h5 className={styles.itemName}>
                                                     {
-                                                        item.item.name
+                                                        item?.item?.name
                                                     }
                                                 </h5>
 
@@ -52,7 +52,7 @@ function OrderManagerComponent(props) {
                                                     size: {item.size}
                                                 </p>
                                                 <p className={styles.itemPrice}>
-                                                    Giá: {item.item.sale.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}₫
+                                                    Giá: {item?.item?.sale.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}₫
                                                 </p>
                                             </div>
                                         </div>

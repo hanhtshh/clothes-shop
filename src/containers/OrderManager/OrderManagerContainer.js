@@ -15,8 +15,9 @@ function OrderManagerContainer(props) {
                 }
             })
                 .then((data) => {
-                    setOrderList(data.data.data);
                     console.log(data.data.data);
+                    setOrderList(data.data.data);
+
                 })
                 .catch(() => {
                     alert('Có lỗi xảy ra, vui lòng thử lại')
@@ -36,47 +37,47 @@ function OrderManagerContainer(props) {
                 })
         }
     }, [user])
-    const deleteOrder=(_id)=>{
-        if(user.admin==1){
-            axios.delete(SERVER+'/oder/admindeleteFailed/'+_id,{
-                headers:{
-                    Authorization:localStorage.getItem('token')
+    const deleteOrder = (_id) => {
+        if (user.admin == 1) {
+            axios.delete(SERVER + '/oder/admindeleteFailed/' + _id, {
+                headers: {
+                    Authorization: localStorage.getItem('token')
                 }
             })
-            .then(()=>{
-                setOrderList(orderList=>orderList.filter(order=>order._id!=_id));
-            })
-            .catch(()=>{
-                alert('Xóa đơn hàng thất bại, vui lòng thử lại sau!');
-            })
+                .then(() => {
+                    setOrderList(orderList => orderList.filter(order => order._id != _id));
+                })
+                .catch(() => {
+                    alert('Xóa đơn hàng thất bại, vui lòng thử lại sau!');
+                })
         }
-        else{
-            axios.delete(SERVER+'/oder/'+_id,{
-                headers:{
-                    Authorization:localStorage.getItem('token')
+        else {
+            axios.delete(SERVER + '/oder/' + _id, {
+                headers: {
+                    Authorization: localStorage.getItem('token')
                 }
             })
-            .then(()=>{
-                setOrderList(orderList=>orderList.filter(order=>order._id!=_id));
-            })
-            .catch(()=>{
-                alert('Xóa đơn hàng thất bại, vui lòng thử lại sau!');
-            })
+                .then(() => {
+                    setOrderList(orderList => orderList.filter(order => order._id != _id));
+                })
+                .catch(() => {
+                    alert('Xóa đơn hàng thất bại, vui lòng thử lại sau!');
+                })
         }
     }
-    const succesOder=(_id)=>{
-        if(user.admin==1){
-            axios.delete(SERVER+'/oder/admindelete/'+_id,{
-                headers:{
-                    Authorization:localStorage.getItem('token')
+    const succesOder = (_id) => {
+        if (user.admin == 1) {
+            axios.delete(SERVER + '/oder/admindelete/' + _id, {
+                headers: {
+                    Authorization: localStorage.getItem('token')
                 }
             })
-            .then(()=>{
-                setOrderList(orderList=>orderList.filter(order=>order._id!=_id));
-            })
-            .catch(()=>{
-                alert('Xóa đơn hàng thất bại, vui lòng thử lại sau!');
-            })
+                .then(() => {
+                    setOrderList(orderList => orderList.filter(order => order._id != _id));
+                })
+                .catch(() => {
+                    alert('Xóa đơn hàng thất bại, vui lòng thử lại sau!');
+                })
         }
     }
     return (
