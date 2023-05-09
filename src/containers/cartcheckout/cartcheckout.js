@@ -24,6 +24,7 @@ export default function CartCheckoutContainer(props) {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: localStorage.getItem("token")
                 },
                 // use the "body" param to optionally pass additional order information
                 // like product skus and quantities
@@ -47,19 +48,58 @@ export default function CartCheckoutContainer(props) {
     async function onApprove(data) {
         // Order is captured on the server
         try {
+            const date = new Date();
             const response = await fetch(`${SERVER}/capture-paypal-order`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+
+                    Authorization: localStorage.getItem("token")
+
                 },
                 body: JSON.stringify({
-                    orderID: data.orderID
+                    orderID: data.orderID,
+                    telephone: telephone,
+                    address: address,
+                    cost: tongtien(),
+                    oder_date: (date.getDay() + 1) + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
+                    oder_list: cart.map(item => {
+                        return {
+                            item: item.item._id,
+                            quantity: item.number,
+                            size: item.size
+                        }
+                    })
                 })
             })
                 .then((res) => res.json())
             console.log(response);
             if (response.status === "COMPLETED") {
-                setPaypalSuccess(true);
+
+                axios.patch(SERVER + '/customer/handleInformation', {
+                    name: name,
+                    address: address,
+                    telephone: telephone,
+                    email: email
+                }, {
+                    headers: {
+                        Authorization: localStorage.getItem("token")
+                    }
+                })
+                    .then(e => {
+                        setSuccess(true);
+                        dispatch(refreshcart({
+                            name: name,
+                            address: address,
+                            telephone: telephone,
+                            email: email
+                        }));
+
+                    })
+
+            }
+            else {
+                setFall(true);
             }
             return response
         }

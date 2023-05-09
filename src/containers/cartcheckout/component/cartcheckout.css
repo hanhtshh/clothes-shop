@@ -121,6 +121,7 @@ input {
 }
 .cartcheckout__cart {
   flex: 1;
+  z-index: 0;
 }
 .cartchekout__cart-buttonthanhtoan {
   height: 45px;
@@ -140,6 +141,7 @@ input {
 .cartchekout__cart-buttonthanhtoan.paypal {
   background: white;
   height: unset;
+  z-index: 900;
 }
 .cartcheckout__cart-listitem {
   max-height: 450px;

@@ -31,6 +31,7 @@ function OrderManagerComponent(props) {
                                     <p>Tên người nhận: {order?.customer?.name ? order.customer.name : props.user.name}</p>
                                     <p>SĐT: {order.telephone}</p>
                                     <p>Địa chỉ: {order.address}</p>
+                                    {order?.paypalStatus && <p>Đã thanh toán <i class="fa-solid fa-circle-check" style={{ fontSize: "14px" }}></i></p>}
                                 </div>
                                 {
                                     order.oder_list.map(item => {
@@ -60,19 +61,19 @@ function OrderManagerComponent(props) {
                                 }
                             </div>
                             <button className={styles.orderButton} onClick={
-                                function(){
+                                function () {
                                     props.deleteOrder(order._id);
                                 }
                             }>
                                 hủy
                             </button>
-                            {props.user.admin==1?<button className={styles.orderButton2} onClick={
-                                function(){
+                            {props.user.admin == 1 ? <button className={styles.orderButton2} onClick={
+                                function () {
                                     props.succesOder(order._id);
                                 }
                             }>
                                 hoàn thành
-                            </button>:<></>}
+                            </button> : <></>}
                         </div>
 
                     </div>

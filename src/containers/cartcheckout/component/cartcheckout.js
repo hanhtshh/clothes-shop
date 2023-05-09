@@ -56,7 +56,7 @@ export default function CartCheckoutComponent(props) {
             </div>
             {
                 props.paypalSuccess === true && <div className="cartcheckout__cart-ship">
-                    Đã thanh toán    <i class="fa-solid fa-circle-check" style={{fontSize:"15px"}}></i>
+                    Đã thanh toán    <i class="fa-solid fa-circle-check" style={{ fontSize: "15px" }}></i>
                 </div>
             }
             <PayPalScriptProvider options={{ "client-id": "Ac54Kq6hRYMFO6FmD8FA2mYfemDgABSJQZSPsVImkOrEdaNnnN43BWU_zvIpa3piou3A7KYn4sOHJMro" }}>
@@ -68,7 +68,7 @@ export default function CartCheckoutComponent(props) {
                 />
             </PayPalScriptProvider>
             <div className="cartchekout__cart-buttonthanhtoan" onClick={props.dathang}>
-                HOÀN TẤT ĐƠN HÀNG
+                THANH TOÁN KHI NHẬN HÀNG
             </div>
 
         </div>
