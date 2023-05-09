@@ -30,7 +30,7 @@ export default function SignupContainer(props){
     }
     const signup=()=>{
         if(user.username!='' && user.password!='' && user.nhaplaipassword!='' && user.nhaplaipassword==user.password){
-            axios.post(SERVER+'/customer',{
+            axios.post(SERVER+'/customer/register',{
                 username:user.username,
                 password:user.password,
                 name:user.name
