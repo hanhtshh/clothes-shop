@@ -62,7 +62,7 @@ export default function CartCheckoutContainer(props) {
                     telephone: telephone,
                     address: address,
                     cost: tongtien(),
-                    oder_date: (date.getDay() + 1) + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
+                    oder_date: (date.getDate() + 1) + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
                     oder_list: cart.map(item => {
                         return {
                             item: item.item._id,
@@ -137,7 +137,7 @@ export default function CartCheckoutContainer(props) {
                 telephone: telephone,
                 address: address,
                 cost: tongtien(),
-                oder_date: (date.getDay() + 1) + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
+                oder_date: (date.getDate() + 1) + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
                 oder_list: cart.map(item => {
                     return {
                         item: item.item._id,
