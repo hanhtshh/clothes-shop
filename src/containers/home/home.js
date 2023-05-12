@@ -7,7 +7,7 @@ export default function HomeContainer(props) {
     const [categoryList, setCategoryList] = useState([0]);
     const [listItem, setListItem] = useState([]);
     const { search } = useLocation();
-    const keySearch = search.split('=')?.[1] || ''
+    const keySearch = decodeURI(search.split('=')?.[1] || '')
 
     useEffect(() => {
         axios.get(SERVER + '/category')
