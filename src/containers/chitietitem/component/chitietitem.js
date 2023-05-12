@@ -1,11 +1,14 @@
 import ImageshowContainer from "../../imageshow/imageshow";
+import shippingIcon from "./shipping-icon.webp";
+import storeIcon from "./storeIcon.png";
+import phoneIcon from "./phoneIcon.svg";
 import "./chitietitem.css";
 export default function ChitietitemComponent(props) {
   const click = (item) => {
     props.click(item.target.src);
     props.setIndex(item.target.id);
   };
-  const themsanpham=(item)=>{
+  const themsanpham = (item) => {
     props.themvaogio();
     props.setDisplayCart();
   }
@@ -191,27 +194,27 @@ export default function ChitietitemComponent(props) {
             </p>
           </div>
           <div className="chitietitem__gioithieu">
-            <img className="chitietitem__gioithieu-image" src='https://torano.vn/tp/T0298/img/tmp/img_policy_1.png'/>
-            <p className="chitietitem__gioithieu-header">
-                GIAO HÀNG TOÀN QUỐC
-                <br/>
-                <span className="chitietitem__gioithieu-body">(Nhận hàng, kiểm tra xong thanh toán sau)</span>
+            <img className="chitietitem__gioithieu-image" style={{ width: "30px" }} src={shippingIcon} />
+            <p className="chitietitem__gioithieu-header" style={{ marginLeft: "2px" }}>
+              GIAO HÀNG TOÀN QUỐC
+              <br />
+              <span className="chitietitem__gioithieu-body">(Nhận hàng, kiểm tra xong thanh toán sau)</span>
             </p>
           </div>
           <div className="chitietitem__gioithieu">
-            <img className="chitietitem__gioithieu-image" src='https://torano.vn/tp/T0298/img/tmp/img_policy_3.png'/>
+            <img className="chitietitem__gioithieu-image" style={{ width: "23px" }} src={storeIcon} />
             <p className="chitietitem__gioithieu-header">
-            ĐỔI SẢN PHẨM DỄ DÀNG
-                <br/>
-                <span className="chitietitem__gioithieu-body">(Đổi sản phẩm trong vòng 7 ngày khi còn nguyên tem mác và mức giảm giá {'<'}50%)</span>
+              ĐỔI SẢN PHẨM DỄ DÀNG
+              <br />
+              <span className="chitietitem__gioithieu-body">(Đổi sản phẩm trong vòng 7 ngày khi còn nguyên tem mác và mức giảm giá {'<'}50%)</span>
             </p>
           </div>
           <div className="chitietitem__gioithieu">
-            <img className="chitietitem__gioithieu-image" src='https://torano.vn/tp/T0298/img/tmp/img_policy_4.png'/>
+            <img className="chitietitem__gioithieu-image" src={phoneIcon} />
             <p className="chitietitem__gioithieu-header">
-            TỔNG ĐÀI BÁN HÀNG 0966835110
-                <br/>
-                <span className="chitietitem__gioithieu-body">(Phí dịch vụ 1.000đ/phút)</span>
+              TỔNG ĐÀI BÁN HÀNG 0966835110
+              <br />
+              <span className="chitietitem__gioithieu-body">(Phí dịch vụ 1.000đ/phút)</span>
             </p>
           </div>
         </div>
