@@ -33,7 +33,7 @@
     list-style: none;
     display: inline-flex;
     flex-wrap: wrap;
-    padding-top: 15px;
+    padding-top: 20px;
 }
 .navbar__category-list-categoryname{
     font-style: oblique;
@@ -58,6 +58,7 @@
     background: white;
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 10px;
 }
 .navbar__search-input{
     position: absolute;
