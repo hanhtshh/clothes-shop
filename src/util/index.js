@@ -1,1 +1,1 @@
-export const SERVER="https://clothes-eswc.onrender.com"
+export const SERVER="https://api-gateway-lnia.onrender.com"
