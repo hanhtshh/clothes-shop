@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { SERVER } from "../../util";
 import HomeComponent from "./component/home";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useSelector } from "react-redux";
 export default function HomeContainer(props) {
     const [categoryList, setCategoryList] = useState([0]);
     const [listItem, setListItem] = useState([]);
