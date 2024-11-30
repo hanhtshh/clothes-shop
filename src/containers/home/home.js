@@ -8,6 +8,7 @@ export default function HomeContainer(props) {
     const [listItem, setListItem] = useState([]);
     const { search } = useLocation();
     const keySearch = decodeURI(search.split('=')?.[1] || '')
+    const user = useSelector(state => state.user);
 
     useEffect(() => {
         axios.get(SERVER + '/category')
@@ -20,7 +21,8 @@ export default function HomeContainer(props) {
     useEffect(() => {
         axios.get(SERVER + '/item', {
             params: {
-                keySearch
+                keySearch,
+                userEmail: user?.email
             }
         })
             .then(item => item.data)
