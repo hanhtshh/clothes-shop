@@ -18,7 +18,7 @@ export default function HomeComponent(props){
             }
             
             <Route path='*'>
-                <ItemShowContainer category={props.categoryList[0].name} listItem={props.listItem}/>
+                <ItemShowContainer category={""} listItem={props.listItem}/>
             </Route>
         </Switch>
         
